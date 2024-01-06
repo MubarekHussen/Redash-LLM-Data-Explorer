@@ -1,119 +1,58 @@
-<p align="center">
-  <img title="Redash" src='https://redash.io/assets/images/logo.png' width="200px"/>
-</p>
+# YouTube Data Analysis Redash Chat Add-on
 
-[![Documentation](https://img.shields.io/badge/docs-redash.io/help-brightgreen.svg)](https://redash.io/help/)
-[![GitHub Build](https://github.com/getredash/redash/actions/workflows/ci.yml/badge.svg)](https://github.com/getredash/redash/actions)
+## Business Objective
 
-Redash is designed to enable anyone, regardless of the level of technical sophistication, to harness the power of data big and small. SQL users leverage Redash to explore, query, visualize, and share data from any data sources. Their work in turn enables anybody in their organization to use the data. Every day, millions of users at thousands of organizations around the world use Redash to develop insights and make data-driven decisions.
+Our company aimed to enhance data analysis capabilities, particularly focusing on comprehensive YouTube data exploration. The goal was to develop a Redash chat add-on facilitating natural language queries for extracting insights from multiple Redash dashboards and connected databases. This initiative aimed to empower team members to derive actionable insights from our BI platforms.
 
-Redash features:
+## Project Design
 
-1. **Browser-based**: Everything in your browser, with a shareable URL.
-2. **Ease-of-use**: Become immediately productive with data without the need to master complex software.
-3. **Query editor**: Quickly compose SQL and NoSQL queries with a schema browser and auto-complete.
-4. **Visualization and dashboards**: Create [beautiful visualizations](https://redash.io/help/user-guide/visualizations/visualization-types) with drag and drop, and combine them into a single dashboard.
-5. **Sharing**: Collaborate easily by sharing visualizations and their associated queries, enabling peer review of reports and queries.
-6. **Schedule refreshes**: Automatically update your charts and dashboards at regular intervals you define.
-7. **Alerts**: Define conditions and be alerted instantly when your data changes.
-8. **REST API**: Everything that can be done in the UI is also available through REST API.
-9. **Broad support for data sources**: Extensible data source API with native support for a long list of common databases and platforms.
+### Data Collection and Storage
 
-<img src="https://raw.githubusercontent.com/getredash/website/8e820cd02c73a8ddf4f946a9d293c54fd3fb08b9/website/_assets/images/redash-anim.gif" width="80%"/>
+- Created a comprehensive schema for YouTube data storage.
+- Utilized Python scripts to persist all required data efficiently.
 
-## Getting Started
+### Redash Chat Add-on Integration
 
-* [Setting up Redash instance](https://redash.io/help/open-source/setup) (includes links to ready-made AWS/GCE images).
-* [Documentation](https://redash.io/help/).
+- Integrated a chatbot into the Redash interface, enabling seamless communication.
+- Leveraged Redash API for query and visualization generation programmatically.
 
-## Supported Data Sources
+### Large Language Model Integration
 
-Redash supports more than 35 SQL and NoSQL [data sources](https://redash.io/help/data-sources/supported-data-sources). It can also be extended to support more. Below is a list of built-in sources:
+- Developed an LLM using OpenAI GPT-3.5 Turbo for translating natural language to SQL queries.
+- Integrated the LLM with the chatbot for accepting user inputs and generating appropriate SQL queries.
 
-- Amazon Athena
-- Amazon CloudWatch / Insights
-- Amazon DynamoDB
-- Amazon Redshift
-- ArangoDB
-- Axibase Time Series Database
-- Apache Cassandra
-- ClickHouse
-- CockroachDB
-- Couchbase
-- CSV
-- Databricks
-- DB2 by IBM
-- Dgraph
-- Apache Drill
-- Apache Druid
-- e6data
-- Eccenca Corporate Memory
-- Elasticsearch
-- Exasol
-- Microsoft Excel
-- Firebolt
-- Databend
-- Google Analytics
-- Google BigQuery
-- Google Spreadsheets
-- Graphite
-- Greenplum
-- Apache Hive
-- Apache Impala
-- InfluxDB
-- InfluxDBv2
-- IBM Netezza Performance Server
-- JIRA (JQL)
-- JSON
-- Apache Kylin
-- OmniSciDB (Formerly MapD)
-- MariaDB
-- MemSQL
-- Microsoft Azure Data Warehouse / Synapse
-- Microsoft Azure SQL Database
-- Microsoft Azure Data Explorer / Kusto
-- Microsoft SQL Server
-- MongoDB
-- MySQL
-- Oracle
-- Apache Phoenix
-- Apache Pinot
-- PostgreSQL
-- Presto
-- Prometheus
-- Python
-- Qubole
-- Rockset
-- Salesforce
-- ScyllaDB
-- Shell Scripts
-- Snowflake
-- SPARQL
-- SQLite
-- TiDB
-- Tinybird
-- TreasureData
-- Trino
-- Uptycs
-- Vertica
-- Yandex AppMetrrica
-- Yandex Metrica
+## Tech Stack Used
 
-## Getting Help
+- Python for data persistence and backend development.
+- Redash for dashboard visualization and querying.
+- OpenAI GPT-3.5 Turbo for natural language understanding and SQL query generation.
 
-* Issues: https://github.com/getredash/redash/issues
-* Discussion Forum: https://github.com/getredash/redash/discussions/
-* Development Discussion: https://discord.gg/tN5MdmfGBp
+## Methodologies Followed
 
-## Reporting Bugs and Contributing Code
+- Agile development methodology for iterative progress.
+- Test-driven development (TDD) for ensuring code robustness.
+- Continuous Integration/Continuous Deployment (CI/CD) for efficient code package testing and deployment.
 
-* Want to report a bug or request a feature? Please open [an issue](https://github.com/getredash/redash/issues/new).
-* Want to help us build **_Redash_**? Fork the project, edit in a [dev environment](https://github.com/getredash/redash/wiki/Local-development-setup) and make a pull request. We need all the help we can get!
+## Results Obtained
 
-## Security
+- Successfully integrated a chatbot allowing natural language queries within Redash.
+- Implemented an LLM capable of translating natural language to SQL queries.
+- Enabled users to extract insights and generate visualizations seamlessly through the Redash interface.
 
-Please email security@redash.io to report any security vulnerabilities. We will acknowledge receipt of your vulnerability and strive to send you regular updates about our progress. If you're curious about the status of your disclosure please feel free to email us again. If you want to encrypt your disclosure email, you can use [this PGP key](https://keybase.io/arikfr/key.asc).
+## Lessons Learned
 
-## License
+- The importance of robust data schema design for efficient querying and visualization.
+- The significance of fine-tuning language models for accurate interpretation of user queries.
+- Continuous iteration and feedback gathering are crucial for improving user experience.
 
-BSD-2-Clause.
+# Chatbot Generating SQL Query Example
+
+In this example, we showcase the functionality of our chatbot integrated with Redash, where a user input in natural language triggers the generation of an SQL query.
+
+![Chatbot Generating SQL Query](screenshots/Screenshot%20from%202024-01-06%2017-59-26.png "Chatbot Example")
+
+The image above demonstrates the chatbot interface. A user input in natural language prompts the chatbot to interpret the query and generate the corresponding SQL. This seamless interaction empowers users to retrieve data through conversational queries.
+
+## Documentation
+
+For a detailed process walkthrough, please refer to the attached PDF document or follow this [link](https://drive.google.com/file/d/1QbxxN_a9mIDLAU385HkLzWsDE5iv_J5o/view?usp=sharing) to access the published blog detailing our approach, challenges faced, and results obtained.
