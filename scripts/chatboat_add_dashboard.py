@@ -25,7 +25,7 @@ def create_visualization_and_dashboard(redash_manager, sql_query, query_name, vi
     }
     redash_manager.add_widget_to_dashboard(dashboard_id, visualization_id, 3, widget_options)
 
-sql_query = "SELECT * FROM total_views_by_day"  # replace this with the output from LLM
+sql_query = "SELECT * FROM total_views_by_day"
 query_name = "Total Views by Day"
 visualization_name = "Total Views by Day"
 dashboard_name = "Total Views by Day"
