@@ -23,7 +23,8 @@ class ChatResource(BaseResource):
             #     ]
             # )
             # answer = completion.choices[0].message.content
-            answer = generate_sql_query(question)
+            result = generate_sql_query(question)[0]
+            answer = result[0] if isinstance(result, list) else result
             response_data = {"answer": answer}
             return jsonify(response_data), 200
         except Exception as error:
