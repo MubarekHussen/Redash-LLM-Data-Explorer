@@ -5,7 +5,6 @@ from urllib.parse import quote_plus
 
 root_dir = './youtube-data'
 
-# Create an empty dictionary to store dataframes
 dfs = {}
 
 encoded_password = quote_plus("postgres")
